@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COVID Predictor</title>
+</head>
+
+<body>
+    <h2>COVID Prediction Form</h2>
+    <form method="POST">
+        Age: <input type="number" name="age" required><br><br>
+        Gender:
+        <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select><br><br>
+        Fever: <input type="number" name="fever" step="0.1"><br><br>
+        Cough:
+        <select name="cough">
+            <option>Mild</option>
+            <option>Strong</option>
+        </select><br><br>
+        City:
+        <select name="city">
+            <option>Kolkata</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Bangalore</option>
+        </select><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+
+</html>
