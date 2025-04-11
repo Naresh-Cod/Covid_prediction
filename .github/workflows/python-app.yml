@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # v3 is the latest stable
+        uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -20,7 +20,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: Upload files to S3
+      - name: Upload files to S3 Bucket "papulal"
         run: |
-          aws s3 cp model.pkl s3://${{ secrets.S3_BUCKET_NAME }}/model.pkl
-          aws s3 cp covid_toy.csv s3://${{ secrets.S3_BUCKET_NAME }}/covid_toy.csv
+          aws s3 cp model.pkl s3://papulal/model.pkl
+          aws s3 cp covid_toy.csv s3://papulal/covid_toy.csv
